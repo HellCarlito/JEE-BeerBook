@@ -88,6 +88,15 @@ public class Biere implements Serializable {
         this.idB = idB;
     }
 
+    public Biere(Integer idB, String nomB, String pourcentB, String lieuBrassageB, String paysB, Integer noteB) {
+        this.idB = idB;
+        this.nomB = nomB;
+        this.pourcentB = pourcentB;
+        this.lieuBrassageB = lieuBrassageB;
+        this.paysB = paysB;
+        this.noteB = noteB;
+    }
+
     public Integer getIdB() {
         return idB;
     }

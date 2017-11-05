@@ -6,6 +6,7 @@
 package Biere;
 
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -14,6 +15,7 @@ import javax.persistence.Query;
  *
  * @author carlito
  */
+@Stateless
 public class BiereDAO {
 @PersistenceContext(unitName = "BeerBookPU")
     private EntityManager em; // l'objet qui permettra faire liaison avec la BDD
