@@ -22,13 +22,7 @@
             <p:ring id="basic" value="#{biereCtrl.biere}" var="biere" autoplay="true" autoplayDuration="3000" autoplayPauseOnHover="true">
                 <p:outputPanel style="text-align: center;" layout="block">
                     #{biere.nomB}
-                    <br />
-                    <p:commandButton title="Details" onclick="PF('details').show();">
-                        <f:setPropertyActionListener value="#{biere}" target="#{biereCtrl.biere}" />
-                    </p:commandButton>
-                    <p:dialog widgetVar="details" minHeight="100">
-                        #{biere.idB}
-                    </p:dialog>
+                    <p:rating value="#{biere.noteB}" readonly="true" stars="10" />
                 </p:outputPanel>
             </p:ring>
         </h:form>
@@ -46,8 +40,6 @@
                 </br>
             </p:dialog>
         </div>
-
-
     </h:body>
 </html>
 
