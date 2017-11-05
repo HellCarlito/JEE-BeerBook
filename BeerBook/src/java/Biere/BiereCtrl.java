@@ -34,10 +34,6 @@ public class BiereCtrl implements Serializable{
         return dao.allBiere();
     }
     
-    /*public List<Etudiants> getEtudiantsPromo() {
-        return dao.allEtudiantsPromo();
-    }*/
-    
     public BiereDAO getDao() {
         return dao;
     }
@@ -46,7 +42,7 @@ public class BiereCtrl implements Serializable{
         this.dao = dao;
     }
 
-    public Biere getEtu() {
+    public Biere getBie() {
         return biere;
     }
 
