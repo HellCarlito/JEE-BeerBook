@@ -17,7 +17,8 @@ import javax.persistence.Query;
  */
 @Stateless
 public class BiereDAO {
-@PersistenceContext(unitName = "BeerBookPU")
+
+    @PersistenceContext(unitName = "BeerBookPU")
     private EntityManager em; // l'objet qui permettra faire liaison avec la BDD
 
     public List<Biere> allBiere() {

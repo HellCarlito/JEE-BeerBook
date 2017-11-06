@@ -15,36 +15,36 @@
 
                 <h:panelGrid columns="2" cellpadding="5">
                     <h:outputLabel for="pseudo" value="Pseudo :" />
-                    <p:inputText id="pseudo" value="" label="Pseudo"/>
+                    <p:inputText id="pseudo" value="#{utilCtrl.util.pseudoU}" label="Pseudo"/>
                     <p:message for="pseudo" />
                     <h:outputText value="" />
                     
                     <h:outputLabel for="age" value="Age :" />
-                    <p:inputText id="age" value="" label="age"/>
+                    <p:inputText id="age" value="#{utilCtrl.util.ageU}" label="age"/>
                     <p:message for="age" />
                     <h:outputText value="" />
 
                     <p:outputLabel for="sexe" value="Sexe :" />
-                    <p:selectOneRadio id="sexe" value="">
+                    <p:selectOneRadio id="sexe" value="#{utilCtrl.util.sexeU}">
                         <f:selectItem itemLabel="Homme" itemValue="homme" />
                         <f:selectItem itemLabel="Femme" itemValue="femme" />
                     </p:selectOneRadio>
 
                     <h:outputLabel for="ville" value="Ville :" />
-                    <p:inputText id="ville" value="" label="ville"/>
+                    <p:inputText id="ville" value="#{utilCtrl.util.villeU}" label="ville"/>
                     <p:message for="ville" />
                     <h:outputText value="" />
 
                     <h:outputLabel for="pays" value="Pays :" />
-                    <p:inputText id="pays" value="" label="pays"/>
+                    <p:inputText id="pays" value="#{utilCtrl.util.paysU}" label="pays"/>
                     <p:message for="pays" />
                     <h:outputText value="" />
                     
                     <h:outputLabel for="mdp1" value="Mot de passe :" />
-                    <p:password id="mdp1" value="" match="mdp2" label="mdp1" required="true" />
+                    <p:password id="mdp1" value="#{utilCtrl.util.mdpU}" match="mdp2" label="mdp1" required="true" />
 
                     <h:outputLabel for="mdp2" value="Répétez le mot de passe : "/>
-                    <p:password id="mdp2" value="" label="mdp2" required="true" />                     
+                    <p:password id="mdp2" value="#{utilCtrl.util.mdpU}" label="mdp2" required="true" />                     
                     
                     <!--<h:outputLabel for="pp" value="Photo de profil :" />                    
                     <p:fileUpload fileUploadListener="" mode="advanced" dragDropSupport="true"
