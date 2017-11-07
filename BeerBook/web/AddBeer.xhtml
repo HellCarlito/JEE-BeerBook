@@ -3,11 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Menu</title> 
+    <head>
+        <title>Ajouter bière</title>
         <link rel="stylesheet" type="text/css" href="CSS/HomePage.css"></link>
-        <script name="jquery/jquery.js" library="primefaces"></script>
-    </h:head>
+    </head>
 
     <!-- Header part -->
     <div class="bandeau" align="center">
@@ -18,12 +17,8 @@
         <p> L'ENCYCLOPÉDIE DE MES BIÈRES PRÉFÉRÉES </p>
     </div>
 
-    <!-- Tag cloud part -->
-    <h:form style="width:500px;"> 
-        <p:growl id="message"></p:growl>
-        <p:tagCloud model="#{tagCloud.model}" >
-            <p:ajax event="select" listener="#{tagCloud.selectListener}" update="message">
-            </p:ajax>
-        </p:tagCloud>
-    </h:form>
+
+    <body>
+        <div>TODO partie pour ajouter les bières</div>
+    </body>
 </html>
