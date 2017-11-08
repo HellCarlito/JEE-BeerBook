@@ -14,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -25,7 +24,7 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author carlito
+ * @author Simon Hay
  */
 @Entity
 @Table(name = "biere")
@@ -38,6 +37,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Biere.findByLieuBrassageB", query = "SELECT b FROM Biere b WHERE b.lieuBrassageB = :lieuBrassageB")
     , @NamedQuery(name = "Biere.findByPaysB", query = "SELECT b FROM Biere b WHERE b.paysB = :paysB")
     , @NamedQuery(name = "Biere.findByNoteB", query = "SELECT b FROM Biere b WHERE b.noteB = :noteB")
+    , @NamedQuery(name = "Biere.findByDescriptionB", query = "SELECT b FROM Biere b WHERE b.descriptionB = :descriptionB")
     , @NamedQuery(name = "Biere.findByTesteLe", query = "SELECT b FROM Biere b WHERE b.testeLe = :testeLe")})
 public class Biere implements Serializable {
 
@@ -64,8 +64,7 @@ public class Biere implements Serializable {
     private String paysB;
     @Column(name = "noteB")
     private Integer noteB;
-    @Lob
-    @Size(max = 65535)
+    @Size(max = 255)
     @Column(name = "descriptionB")
     private String descriptionB;
     @Column(name = "testeLe")
@@ -86,15 +85,6 @@ public class Biere implements Serializable {
 
     public Biere(Integer idB) {
         this.idB = idB;
-    }
-
-    public Biere(Integer idB, String nomB, String pourcentB, String lieuBrassageB, String paysB, Integer noteB) {
-        this.idB = idB;
-        this.nomB = nomB;
-        this.pourcentB = pourcentB;
-        this.lieuBrassageB = lieuBrassageB;
-        this.paysB = paysB;
-        this.noteB = noteB;
     }
 
     public Integer getIdB() {
