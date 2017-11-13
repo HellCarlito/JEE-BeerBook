@@ -11,55 +11,53 @@
     <h:body>
         <h:form>
             <p:panel header="Inscription">
-                <p:messages />
-
-                <h:panelGrid columns="2" cellpadding="5">
-                    <h:outputLabel for="pseudo" value="Pseudo :" />
-                    <p:inputText id="pseudo" value="#{utilCtrl.util.pseudoU}" label="Pseudo">
+                <h:panelGrid columns="3" cellpadding="5">
+                    <h:outputLabel for="pseudo" value="Pseudo : *" />
+                    <p:inputText id="pseudo" value="#{utilCtrl.util.pseudoU}" label="Pseudo" required="true">
                          <f:validateLength minimum="4" maximum="20" />
-                    </p:inputText>
-                   
-                    
+                    </p:inputText>                                       
                     <p:message for="pseudo" />
-                    <h:outputText value="" />
                     
-                    <h:outputLabel for="age" value="Age :" />
-                    <p:inputText id="age" value="#{utilCtrl.util.ageU}" label="age"/>
-                    <f:validateDoubleRange minimum="18" maximum="110" />
+                    <h:outputLabel for="age" value="Age : *" />
+                    <p:inputText id="age" value="#{utilCtrl.util.ageU}" label="Age" required="true">
+                        <f:validateDoubleRange minimum="18" maximum="110" />
+                    </p:inputText>                   
                     <p:message for="age" />
-                    <h:outputText value="" />
 
                     <p:outputLabel for="sexe" value="Sexe :" />
-                    <p:selectOneRadio id="sexe" value="#{utilCtrl.util.sexeU}">
+                    <p:selectOneRadio id="sexe" value="#{utilCtrl.util.sexeU}" required="true">
                         <f:selectItem itemLabel="Homme" itemValue="H" />
                         <f:selectItem itemLabel="Femme" itemValue="F" />
+                        <f:selectItem itemLabel="Transgenre" itemValue="TG" />
                     </p:selectOneRadio>
+                    <p:message for="sexe" />                   
 
                     <h:outputLabel for="ville" value="Ville :" />
-                    <p:inputText id="ville" value="#{utilCtrl.util.villeU}" label="ville"/>
+                    <p:inputText id="ville" value="#{utilCtrl.util.villeU}" label="ville" onblur="value=value.toUpperCase()"/>
                     <p:message for="ville" />
-                    <h:outputText value="" />
 
                     <h:outputLabel for="pays" value="Pays :" />
-                    <p:inputText id="pays" value="#{utilCtrl.util.paysU}" label="pays"/>
+                    <p:inputText id="pays" value="#{utilCtrl.util.paysU}" label="pays" onblur="value=value.toUpperCase()"/>
                     <p:message for="pays" />
-                    <h:outputText value="" />
                     
                     <h:outputLabel for="mdp1" value="Mot de passe :" />
-                    <p:password id="mdp1" value="#{utilCtrl.util.mdpU}" match="mdp2" label="mdp1" required="true" />
+                    <p:password id="mdp1" value="#{utilCtrl.util.mdpU}" match="mdp2" label="Mot de passe 1" required="true" />
+                    <p:message for="mdp1" />
 
                     <h:outputLabel for="mdp2" value="Répétez le mot de passe : "/>
-                    <p:password id="mdp2" value="#{utilCtrl.util.mdpU}" label="mdp2" required="true" />                     
-                    
+                    <p:password id="mdp2" value="#{utilCtrl.util.mdpU}" label="Mot de passe 2" required="true" />
+                    <p:message for="mdp2" />
+                                        
                     <!--<h:outputLabel for="pp" value="Photo de profil :" />                    
                     <p:fileUpload fileUploadListener="" mode="advanced" dragDropSupport="true"
                         update="messages" sizeLimit="100000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
                     <p:growl id="messages" showDetail="true" />-->
-
                    
                 </h:panelGrid>
-
+                <p:separator/>
                 <p:commandButton value="Valider" action="#{utilCtrl.addUtil()}" ajax="false" icon="ui-icon-check" validateClient="true"/>
+                <br></br><br></br>
+                <h:outputLabel value="Tous les champs marqués d'une * sont obligatoires."/>                    
             </p:panel>
         </h:form>        
     </h:body>

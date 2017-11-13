@@ -34,8 +34,8 @@ public class UtilisateurCtrl implements Serializable{
     
     public void addUtil(){
         daoUtil.add(this.util);
-        FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage("Bienvenue " + util.getPseudoU() + " :-) !"));        
+        FacesContext.getCurrentInstance().addMessage(
+                null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenue " + util.getPseudoU() + " :-) !", null));        
         this.util = new Utilisateur();
     }
 
