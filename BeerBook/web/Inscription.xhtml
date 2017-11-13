@@ -15,19 +15,24 @@
 
                 <h:panelGrid columns="2" cellpadding="5">
                     <h:outputLabel for="pseudo" value="Pseudo :" />
-                    <p:inputText id="pseudo" value="#{utilCtrl.util.pseudoU}" label="Pseudo"/>
+                    <p:inputText id="pseudo" value="#{utilCtrl.util.pseudoU}" label="Pseudo">
+                         <f:validateLength minimum="4" maximum="20" />
+                    </p:inputText>
+                   
+                    
                     <p:message for="pseudo" />
                     <h:outputText value="" />
                     
                     <h:outputLabel for="age" value="Age :" />
                     <p:inputText id="age" value="#{utilCtrl.util.ageU}" label="age"/>
+                    <f:validateDoubleRange minimum="18" maximum="110" />
                     <p:message for="age" />
                     <h:outputText value="" />
 
                     <p:outputLabel for="sexe" value="Sexe :" />
                     <p:selectOneRadio id="sexe" value="#{utilCtrl.util.sexeU}">
-                        <f:selectItem itemLabel="Homme" itemValue="homme" />
-                        <f:selectItem itemLabel="Femme" itemValue="femme" />
+                        <f:selectItem itemLabel="Homme" itemValue="H" />
+                        <f:selectItem itemLabel="Femme" itemValue="F" />
                     </p:selectOneRadio>
 
                     <h:outputLabel for="ville" value="Ville :" />
@@ -54,7 +59,7 @@
                    
                 </h:panelGrid>
 
-                <p:commandButton value="Valider" ajax="false" icon="ui-icon-check" validateClient="true"/>
+                <p:commandButton value="Valider" action="#{utilCtrl.addUtil()}" ajax="false" icon="ui-icon-check" validateClient="true"/>
             </p:panel>
         </h:form>        
     </h:body>

@@ -8,6 +8,8 @@ package Biere;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 
@@ -32,6 +34,8 @@ public class UtilisateurCtrl implements Serializable{
     
     public void addUtil(){
         daoUtil.add(this.util);
+        FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage("Bienvenue " + util.getPseudoU() + " :-) !"));        
         this.util = new Utilisateur();
     }
 
