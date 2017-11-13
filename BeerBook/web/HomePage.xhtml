@@ -8,25 +8,25 @@
         <title>Beer - book</title>
     </h:head>
     <h:body>
-
+        
         <!-- Header part -->
-        <div class="bandeau" align="center">
-            <h1>BEER - BOOK
-                <img src="Images/logoHomePage.png" alt="LogoHome" 
-                     width="120" height="120" align="left"/>
-            </h1> 
-            <p> L'ENCYCLOPÉDIE DE MES BIÈRES PRÉFÉRÉES </p>
-        </div>
+    <div class="bandeau" align="center">
+        <h1>BEER - BOOK
+            <img src="Images/logoHomePage.png" alt="LogoHome" 
+                 width="120" height="120" align="left"/>
+        </h1> 
+        <p> L'ENCYCLOPÉDIE DE MES BIÈRES PRÉFÉRÉES </p>
+    </div>
 
 
         <!-- Connection part -->
         <br></br>
         <h:form style="text-align: center;">
-            <p:inputText value="#{login.user}" style="text-align: center; margin-bottom: 4px;" title="Enter your login" /> <br></br>
-            <p:password value="#{login.pwd}" style="text-align: center; margin-bottom: 4px;" title="Enter your password"/> <br></br>
+            <p:inputText value="Login" style="text-align: center; margin-bottom: 4px;" title="Enter your login" /> <br></br>
+            <p:inputText value="Password" style="text-align: center; margin-bottom: 4px;" title="Enter your password"/> <br></br>
             <!-- TO DO Add an action on this command Button once we are connected -->
-            <h:commandButton value="Connexion"  action="#{login.validateUsernamePassword()}" style="text-align: center; margin-bottom: 4px;" title="Click here to connect" />  <br></br>
-            <h:link value="Create an account" outcome="Inscription" title="Click here to create an account"/>
+            <p:commandButton value="Connexion"  action="Menu" style="text-align: center; margin-bottom: 4px;" ajax="false" title="Click here to connect" />  <br></br>
+            <h:link value="Create an account" outcome="Inscription" title="Click here to create an account"></h:link>
         </h:form>
 
 
